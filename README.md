@@ -1,4 +1,4 @@
-# ELT Center of Hope
+# ETL Center of Hope
 
 Exports clinical data from SQL Server (`HIV_Treatment`) into MySQL (`preart`) for Center of Hope.
 
