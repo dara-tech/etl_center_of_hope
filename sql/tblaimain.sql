@@ -20,6 +20,7 @@ select ci.ClinicId as ClinicID,
        i.[National ART number] as Artnum, 
        iif(tb.TbPast is not null, 1, 0) as TbPast, 
        '-1' as TPT, 
+       '-1' as TPTdrug,
        null as DaStartTPT, 
        null as DaEndTPT, 
        '-1' as TypeTB, 
@@ -39,7 +40,11 @@ select ci.ClinicId as ClinicID,
        'False' as HepBC, 
        'False' as MedOther, 
        '-1' as Allergy, 
-       '-1' as Nationality
+       '-1' as Nationality,
+       '-1' as Targroup,
+       '-1' as Refugstatus,
+       '-1' as RefugART,
+       '' as Refugsite
 from tblPATIENT p
 left outer join tblPATIENTINFO i on p.ID=i.ID
 left outer join tblBAS b on p.ID=b.ID

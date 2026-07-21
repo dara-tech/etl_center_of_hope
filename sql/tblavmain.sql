@@ -76,7 +76,9 @@ ISNULL(b.WHOinclusion, '-1') as WHO,
 null as TPTout,
 null as TBout,
 ISNULL(v.NextAppoin_d, '1900-01-01') as DaApp,
-ci.ClinicID + right('0'+cast(day(v.vis_d) as varchar(2)),2) + right('0'+cast(Month(v.vis_d) as varchar(2)),2) + right(cast(year(v.vis_d) as varchar(4)),2) as Vid
+ci.ClinicID + right('0'+cast(day(v.vis_d) as varchar(2)),2) + right('0'+cast(Month(v.vis_d) as varchar(2)),2) + right(cast(year(v.vis_d) as varchar(4)),2) as Vid,
+-1 as Foworker,
+-1 as Country
 from tblVIS v
 left join tblCodeID ci on ci.PtCode=v.ID 
 left outer join tblBAS b on b.ID=v.ID
